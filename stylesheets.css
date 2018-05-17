@@ -1,0 +1,104 @@
+body {
+  background-color:black;
+  margin: 0;
+  padding: 0;
+  font-family: 'Marck Script', cursive;
+
+}
+.nav {
+    
+border:6px solid white;
+
+}
+
+.page {
+  text-align: center;
+}
+
+
+a{
+    
+    padding:12px;
+    color:white;
+    text-decoration:none;
+}
+th{
+    color:white;
+}
+td{
+    color:white;
+    font-size: 24px;
+      font-family: 'Spectral SC', serif;
+}
+h1{
+    border:6px solid black;
+    color:white;
+    text-align: center;
+    font-family: 'Spectral SC', serif;
+}
+h2{
+  text-align: center;
+  color:white;
+}
+h4{
+    color:white;
+  text-align: center;
+}
+h3{
+    color:white;
+  text-align: center;
+  font-family: 'Marck Script', cursive;
+  font-family: 'Lobster', cursive;
+}
+li{
+    color:white;
+  text-align: center;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+td{
+  font-family: 'Spectral SC', serif;
+   justify-content:center;
+    display:flex;
+}
+img{
+
+  border:6px solid white;
+  width: 200px;
+  height:239px;
+}
+   
+   P{
+     color:white;
+      text-size:30px;
+      text-align: center;
+      font-family: 'Amatic SC';
+      font-family: 'Lobster', cursive;
+   }
+   
+   .img{
+      
+      justify-content:center;
+      display:flex;
+   
+   }
+   
+         body {
+        background-color: blue;
+        color:black;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+          background-color: blue
+        text-align: center;
+      }
+     
+      .content {
+          background-color:black;
+        border: 1px solid black;
+        margin: 0 auto;
+        width: 720px;
+         font-family: 'Amatic SC';
+                font-size: 28px;
+      }

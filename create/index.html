@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   
+        <title>pong game</title>
+    </head>
+    <body>
+        
+        <style type="text/css">
+            body {
+    font-family: arial;
+    text-align: center;
+}
+body {
+     background-color: #fff;
+     -webkit-animation: random 30s infinite;
+     animation: random 30s infinite;
+}
+@keyframes  random {
+    15% { background-color: red; } 
+    30% { background-color: yellow; } 
+    45% { background-color: green; } 
+    60% { background-color: black; }
+    75% { background-color: white; }  
+    90% {background-color: purple; }
+}
+
+.draw {
+     background-color: #fff;
+     -webkit-animation: random 30s infinite;
+     animation: random 30s infinite;
+}
+@keyframes  random {
+    15% { background-color: red; } 
+    30% { background-color: yellow; } 
+    45% { background-color: green; } 
+    60% { background-color: black; }
+    75% { background-color: white; }  
+    90% {background-color: purple; }
+}
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+        <script type="text/javascript">
+            
+            var y1 = 0;
+var y2 = 200;
+var x = 100;
+var y = 200;
+var dx = 1;
+var dy = 1;
+var a = 0.9;
+
+var r = 20;
+var g = 50;
+var b = 230;
+var e = 250;
+var f = 0;
+var g = 0;
+
+// y 
+// y >= y1 && y < y1 + 120
+
+function setup() {
+    createCanvas(600, 400);
+
+
+    e = random(255);
+    f = random(255);
+    g = random(255);
+
+}
+
+function draw() {
+     boundary();
+    drawPaddle();
+    leftPaddleMovement();
+    rightPaddleMovement();
+    move();
+}
+
+function drawPaddle()
+{
+    background(r, g, b);
+
+    line(300, 0, 300, 400);
+    strokeWeight(3);
+    fill(250, 250, 80);
+    rect(10, y1, 20, 120);
+    rect(565, y2, 20, 120);
+
+    fill(e, f, g);
+    rect(x, y, 30, 30);
+
+    if (y >= height) {
+        dy = dy * -1;
+    }
+}
+
+function boundary()
+{
+    // TODO: check the top boundary
+    if (y <= 0) {
+        dy = dy * -1;
+    }
+
+
+    // TODO: check the left boundary
+    if (x <= 0) {
+        dx = dx * -1;
+    }
+
+
+
+    // TODO: check the right boundary
+    if (x >= width) {
+        dx = dx * -1;
+    }
+}
+
+function leftPaddleMovement(){
+    
+    // y=y+10
+    // LEFT PADDLE
+    if (x < 30 && y > y1 && y < y1 + 120) {
+        dx = -dx;
+
+        if (a === 1.1) {
+            a = 0.9;
+        } else {
+            a = 1.1;
+        }
+    }
+}
+function rightPaddleMovement(){
+    //right paddle
+    if (x + 30 > 570 && y > y2 && y < y2 + 120) {
+        dx = -dx;
+
+        if (a === 1.1) {
+            a = 0.9;
+        } else {
+            a = 1.1;
+        }
+    }
+}
+
+function move(){
+
+    x = x + 15 * dx * a;
+    y = y + 15 * dy * (1 - a);
+
+    if (y > 400 || y < 0) {
+        dy = -dy;
+
+    }
+
+    if (keyIsDown(65)) {
+        if (y1 < 260) {
+            y1 = y1 + 20;
+        }
+    }
+
+    if (keyIsDown(81)) {
+        if (y1 > 0) {
+            y1 = y1 - 20;
+        }
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+        if (y2 < 260) {
+            y2 = y2 + 20;
+        }
+
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+        if (y2 > 0) {
+            y2 = y2 - 20;
+        }
+    }
+}
+        </script>
+     
+    </body>
+</html>
