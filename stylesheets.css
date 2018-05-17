@@ -17,7 +17,7 @@ border:6px solid white;
 
 
 a{
-    
+    font-family: 'Acme', sans-serif;
     padding:12px;
     color:white;
     text-decoration:none;
@@ -72,8 +72,7 @@ img{
      color:white;
       text-size:30px;
       text-align: center;
-      font-family: 'Amatic SC';
-      font-family: 'Lobster', cursive;
+      font-family: 'Acme', sans-serif;
    }
    
    .img{

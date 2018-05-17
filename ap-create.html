@@ -2,6 +2,8 @@
   <head>
     <title>jcruz websuite </title>
     <link href="stylesheets.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
   </head>
  
@@ -19,7 +21,80 @@
             <a href="tech-in-my-life.html">Tech In My Life</a>
             
           </div>
+          <P>2a.  	My game was written in javascript using the popcode programing environment. The purpose of this game is to show how the ball could travel to so many direction to player 1 and player 2 while bouncing in the edges.If the ball bounces off the paddle the ball would bounce back to player 1 and player 2.In the video would see the ball start on the middle of the game and then start on a random direction to player 1 in  2. While 
+The ball bounce to the paddles and then to the edges of the game. 
+</P>
+<P>2b. 	The first developmental challenge i encountered was the border of the wall because we have to fix the paddle to make the ball bounce to the second player paddle. This was  a problem because in the game we need  border on the paddle to make the bounce toward  another direction..In then i figured out we need  to declare a variable to make the paddle to bounces the ball.I solved this challenged with my partner because we have  to figures out how much of y and x we need to make the ball bounce by gravity.
+</P>
+<P>The second developmental challenge i encountered was to make the ball not to glitch to the wall. The ball was working really well while the ball start glitching around the edges of the wall and the paddles. This was a problem because while the ball is glitching  the whole game wouldn’t work  and glitching in the paddle.We solved this by adding x<30 and Y<y1+120. This make the ball to bounce around the edges and touching the paddles while bouncing another coordinate.
+</P>
+  <P>2c.		
+
+
+My main Algorithm that I am using is the function draw. This make my  code code is to make the paddle to move by using a declared variable of dx and dy to make the paddle to move with one command.We have to use coordinates to show the direction of the ball is bouncing around the edges. 
+  if (keyIsDown(65)) {
+        if (y1 < 260) {
+            y1 = y1 + 20;
+        }
+    }
+The purpose of this code is   the ball to touch the paddle  by using a command.We have to declare a variable of y1 and y1 to make the paddle  to be used in one command;such as  (q,a) and (up arrow and down arrow) to make the command to be more easier to player one and player two.This command work by the declare  variable of  dx=-dx because this make the velocity of the paddle goes (down and up) which make  the paddle to move by using the command a  with the number of velocity.  
+ The algorithm is able to achieve this results by making  by making the control be used in one command and also to be by a function we have declared by  y1 and y2 because this make the paddle to move by the command of a.
+
+The draw() function also incorporates with the logic algorithm shown below;
+
+ if (y >= height) {
+        dy = dy * -1;
+    }
+
+    // TODO: check the top boundary
+    if (y <= 0) {
+        dy = dy * -1;
+    }
+
+	The purpose of this code is to make the ball to bounce around the edges and the paddle to different direction.This logic works because we are using a coordinate of the y-axis  of the height and the width of the ball bouncing to the edges.We have used the declare variable of dy because show the boundaries of the ball direction while touching the dges and the paddle. Algorithm able to make the ball to bounce off the paddle and to make the paddle go by the hight and the width.
+</P>
+<P> 2D. An example of an abstraction in my program is
+		
+function move(){
+
+    x = x + 15 * dx * a;
+    y = y + 15 * dy * (1 - a);
+
+    if (y > 400 || y < 0) {
+        dy = -dy;
+
+    }
+
+    if (keyIsDown(65)) {
+        if (y1 < 260) {
+            y1 = y1 + 20;
+        }
+    }
+
+    if (keyIsDown(81)) {
+        if (y1 > 0) {
+            y1 = y1 - 20;
+        }
+    }
+
+    if (keyIsDown(DOWN_ARROW)) {
+        if (y2 < 260) {
+            y2 = y2 + 20;
+        }
+
+    }
+
+    if (keyIsDown(UP_ARROW)) {
+        if (y2 > 0) {
+            y2 = y2 - 20;
+        }
+    }
+}
+
+This simplifies my program  by getting all of the movement of the paddle to move by a command of y1 and y2. If this abstraction weren't present, then my code would be only in one function and make code to be difficult to read and understand.
+</P>
         <iframe src="create/index.html" width="100%" height="500"/>
+        
       
     </div>
   </body>
